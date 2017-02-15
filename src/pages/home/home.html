@@ -1,14 +1,33 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title style="height:60px;">
+      <div class="middle">
+      CLIMAFLUIDES - Liste des interventions
+      </div>
     </ion-title>
-  </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<div class="middle">
+    <button ion-button class="button-large button-positive" (click)="goNewIntervention()">
+      Nouvelle intervention
+    </button>
+  </div>
+
+  <ion-card *ngFor="let row of doub">
+    <ion-card-header>
+      {{row.numfiche}}
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        {{row.detenteur}}
+      </ion-item>
+      <ion-item>
+        {{row.date}}
+      </ion-item>
+        <ion-item>
+        {{row.etat}}
+      </ion-item>       
+    </ion-list>
+  </ion-card>
 </ion-content>
+

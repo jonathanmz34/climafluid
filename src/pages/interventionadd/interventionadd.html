@@ -1,0 +1,136 @@
+<ion-header>
+    <ion-title style="height:60px;">
+      <div class="middle">
+      CLIMAFLUIDES - Nouvelle intervention
+      </div>
+    </ion-title>
+</ion-header>
+    <div class="middle">
+    <button ion-button class="button-large button-positive" (click)="goListinterventions()">
+      Retour à l'accueil
+    </button>
+  </div>
+
+ 
+<ion-content>
+
+
+<div class="middle3">
+
+  <ion-card >
+    <ion-card-header>
+      Intervention
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">Détenteur : </ion-label>
+        <ion-input [(ngModel)]="detenteur" disabled="disabled"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Identification de l équipement : </ion-label>
+        <ion-input [(ngModel)]="equipident" disabled="disabled"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Nature de l équipement : </ion-label>
+        <ion-input [(ngModel)]="equipnat" disabled="disabled"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Nature de l intervention : </ion-label>
+        <ion-input [(ngModel)]="natinter" disabled="disabled"></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+   <ion-card >
+    <ion-card-header>
+      Controle de l'etanchéité
+    </ion-card-header>
+    <ion-list >
+      <ion-item >
+        <ion-label color="primary" >Idenification du détécteur : </ion-label>
+        <ion-input [(ngModel)]="identdetect" disabled="disabled" ></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-label color="primary">Controlé le : </ion-label>
+        <ion-input [(ngModel)]="datectrldetect" disabled="disabled"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-label color="primary">Présence d'un systeme de détéction des fuites : </ion-label>
+        <ion-input [(ngModel)]="pressysdetect" disabled="disabled"></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+   <ion-card >
+    <ion-card-header>
+      Manipulation de fluide
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">A : </ion-label>
+        <ion-input [(ngModel)]="manquanta" disabled="disabled"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">B : </ion-label>
+        <ion-input [(ngModel)]="manquantb" disabled="disabled"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">C : </ion-label>
+        <ion-input [(ngModel)]="manquantc" disabled="disabled"></ion-input>
+      </ion-item>
+       <ion-item>
+        <ion-label color="primary">D : </ion-label>
+        <ion-input [(ngModel)]="manquantd" disabled="disabled"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">E : </ion-label>
+        <ion-input [(ngModel)]="manquante" disabled="disabled"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">F : </ion-label>
+        <ion-input [(ngModel)]="manquantf" disabled="disabled"></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Validation
+    </ion-card-header>
+    <ion-list>
+    <ion-item>
+        <ion-label color="primary">Nom : </ion-label>
+        <ion-input [(ngModel)]="nomsign" disabled="disabled"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Qualité : </ion-label>
+        <ion-input [(ngModel)]="qualsign" disabled="disabled"></ion-input>
+      </ion-item>
+    </ion-list>
+  <div class="title">Signature</div>
+  <ion-row [ngClass]="{'drawing-active': isDrawing}">
+    <ion-col></ion-col>
+    <ion-col>
+      <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  
+  
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col width-80>
+      <img style="max-width: 400px; display: none" [src]="signature"/>
+    </ion-col>
+    <ion-col>
+      </ion-col>
+  </ion-row>
+  <button ion-button full color="danger" class="middle3" style="max-width: 160px;" (click)="clearPad()">Clear</button>
+      <button ion-button full color="secondary" class="middle3" style="max-width: 160px;" (click)="savePad()">Save</button>
+  </ion-card>
+
+  <div class="middle">
+    <button ion-button class="button-large button-positive" (click)="EnregistreIntervention(detenteur,equipident,equipnat,natinter,identdetect,datectrldetect,pressysdetect,manquanta,manquantb,manquantc,manquantd,manquante,manquantf,nomsign,qualsign)">
+      Enregistrer
+    </button>
+  </div>
+  </div>
+</ion-content>
