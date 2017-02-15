@@ -15,3 +15,15 @@ proguard/
 
 # Log Files
 *.log
+
+config.xml
+hooks/
+ionic.config.json
+node_modules/
+package.json
+platforms/
+plugins/
+resources/
+tsconfig.json
+tslint.json
+www/
