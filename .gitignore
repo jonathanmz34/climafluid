@@ -27,3 +27,8 @@ resources/
 tsconfig.json
 tslint.json
 www/
+
+.editorconfig
+.io-config.json
+.vscode/
+typings/
